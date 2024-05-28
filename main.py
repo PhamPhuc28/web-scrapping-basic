@@ -3,8 +3,10 @@ import requests
 
 def remove_brackets(text):
   return re.sub(r"<.*?>", "", text)
-
-for i in range(90000,90101):
+# lưu ý số báo danh từ khoảng 9000 đến 200002
+begin = int(intput("nhập số báo danh bắt đầu"))
+end = int(input("nhập số báo danh kết thức"))
+for i in range(begin,end+1):
   url = "https://diemthi.vnexpress.net/diem-thi-lop-10/detail/id/1_"
   url+=str(i)
   result = requests.get(url).text
